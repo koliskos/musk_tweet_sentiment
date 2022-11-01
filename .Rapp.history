@@ -1,0 +1,228 @@
+sent1_data<- read.csv("/Users/skylarkolisko/Desktop:/thesis/exp1/results/aug22_test1/sent_num1.csv", stringsAsFactors = FALSE)#
+#
+head(sent1_data)
+library(tidyverse)
+max_neg_sent1 <- sent1_data %>% slice_max(Estimated.Inference.is.Negative)#
+min_neg_sent1 <- sent1_data %>% slice_min(Estimated.Inference.is.Negative)
+max_neg_sent1 <- sent1_data %>% slice_max(Estimated.Inference.is.Negative)#
+print(max_neg_sent1)#
+min_neg_sent1 <- sent1_data %>% slice_min(Estimated.Inference.is.Negative)#
+print(min_neg_sent1)
+print(max_neg_sent1)
+print(min_neg_sent1)
+stdev_negative_sent1 <- sd(sent1_data)
+stdev_negative_sent1 <- sd(sent1_data[Estimated.Inference.is.Negative])
+head(sent1_data)
+stdev_negative_sent1 <- sd(sent1_data['Estimated.Inference.is.Negative'])
+sent1_data['Estimated.Inference.is.Negative']
+type(sent1_data['Estimated.Inference.is.Negative'])
+typeof(sent1_data['Estimated.Inference.is.Negative'])
+stdev_negative_sent1 <- sd(sent1_data['Estimated.Inference.is.Negative'])
+num <- as.numeric(sent1_data['Estimated.Inference.is.Negative'])
+num <- as.numeric(unlist(sent1_data['Estimated.Inference.is.Negative']))
+stdev_negative_sent1 <- sd(num)
+stdev_negative_sent1
+mean_negative_sent1<- mean(num)
+mean_negative_sent1
+print(getwd())
+setwd("/Desktop:/CALabS22/nameBias/sentiment_exp/ssn_1993_sentiment")
+setwd("./Desktop:/CALabS22/nameBias/sentiment_exp/ssn_1993_sentiment")
+setwd("./Desktop:/CALabS22")
+setwd("nameBias/sentiment_exp/ssn_1993_sentiment")
+setwd("nameBias")
+setwd("./sentiment_exp")
+setwd("./ssn_1993_sentiment")
+print(getwd())
+setwd("./analysis")
+setwd("./ssn_1993_sentiment")
+data<- read.csv("../../current_versions/nat_names_1993.csv", stringsAsFactors = FALSE)
+neg<-data$Estimated.Inference.is.Negative
+logit_neg <-log(neg/(1-neg))
+neg<-data$Estimated.Inference.is.Negative
+logit_neg <-log(neg/(1-neg))
+data$logit_neg<-logit_neg
+print(head(data))
+data %>% count(Name) %>% filter(n > 4)
+library(dplyr)
+t<-table(data$Name)
+data %>% count(Name) %>% filter(n > 4)
+data %>% count(Name) %>% filter(n > 5)
+print(data[data$Name=="Timothy" , ])
+reported_f_and_m <-data %>% count(Name) %>% filter(n > 5)
+print(reported_f_and_m)
+print(data[data$Name=="Skylar" , ])
+print(data[data$Name=="Cam" , ])
+print(data[data$Name=="Cameron" , ])
+both_f_count<-reported_both[reported_both $Assigned_Sex == "F", ] #both_f_count contains the counts number of female-assigned babies given the names from reported_both
+reported_both <-data %>% count(Name) %>% filter(n > 5) # reported_both contains the names that are reported as both being given to babies assigned as male and babies assigned as female.
+both_f_count<-reported_both[reported_both $Assigned_Sex == "F", ] #both_f_count contains the counts number of female-assigned babies given the names from reported_both
+both_m_count<- reported_both[reported_both $Assigned_Sex == "M", ]#both_m_count contains the counts number of male-assigned babies given the names from reported_both
+reported_both$both_f_count<-reported_both[reported_both $Assigned_Sex == "F", ] #both_f_count contains the counts number of female-assigned babies given the names from reported_both
+reported_both <-data %>% count(Name) %>% filter(n > 5) # reported_both contains the names that are reported as both being given to babies assigned as male and babies assigned as female.
+print(reported_both)
+print(reported_both.columns)
+print(reported_both.cols)
+print(colnames(reported_both))
+library(tidyverse)
+both_f_count<-reported_both[reported_both $Assigned_Sex == "F", ] #both_f_count contains the counts number of female-assigned babies given the names from reported_both
+print(both_f_count)
+print(head(both_f_count))
+print(head(reported_both))
+print(head(data))
+inner_join(both_sexes_names, by = c("Name" = "Name"))
+both_sexes_names<-  data %>% group_by(Name) %>% filter(n()>=5)
+only_boths <- data  %>% #
+  inner_join(both_sexes_names, by = c("Name" = "Name"))
+print(head(only_boths))
+print(both_sexes_names[both_sexes_names $Name=="Jessica" , ])
+print(only_boths)
+print(reported_both)
+only_boths <- both_sexes_names  %>% #
+  inner_join(data, by = c("Name" = "Name"))
+print(only_boths)
+print(colnames(data))#
+par(las=1, mar=c(5,10,5,5))#
+boxplot(data$Estimated.Inference.is.Negative ~ data$Assigned_Sex + data$Pronoun +  data$Popularity, ylim=c(0,1), horizontal=TRUE)
+boxplot(data$Estimated.Inference.is.Negative ~ data$Assigned_Sex + data$Pronoun, ylim=c(0,1), horizontal=TRUE)
+boxplot(all_names $Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, all_names$Count, ylim=c(0,1), horizontal=TRUE)
+boxplot(all_names $Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, all_names$Count, ylim=c(0,1), horizontal=TRUE)
+all_names<- read.csv("../../current_versions/nat_names_1993.csv", stringsAsFactors = FALSE)
+boxplot(all_names $Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, all_names$Count, ylim=c(0,1), horizontal=TRUE)
+boxplot(all_names$logit_neg ~ all_names$Assigned_Sex + all_names$Pronoun, all_names$Count, ylim=c(0,1), horizontal=TRUE)
+all_names<- read.csv("../../current_versions/nat_names_1993.csv", stringsAsFactors = FALSE)
+neg<-all_names$Estimated.Inference.is.Negative#
+logit_neg <-log(neg/(1-neg))#
+all_names$logit_neg<-logit_neg
+par(las=1, mar=c(5,10,5,5))
+boxplot(all_names$logit_neg ~ all_names$Assigned_Sex + all_names$Pronoun, all_names$Count, ylim=c(0,1), horizontal=TRUE)
+boxplot(all_names$logit_neg ~ all_names$Assigned_Sex + all_names$Pronoun + all_names$Count, ylim=c(0,1), horizontal=TRUE)
+print(summary(all_names))
+print(mode(all_names$Count))
+allnames$low_count <- ifelse(all_names$Count>145)
+allnames$low_count <- ifelse(all_names$Count>145, 1,0)
+all_names$low_count <- ifelse(all_names$Count>145, 1,0)
+print(head(all_names$low_count))
+print(head(all_names))
+all_names$low_count <- ifelse(all_names$Count<145, 1,0)
+print(head(all_names))
+boxplot(all_names$logit_neg ~ all_names$Assigned_Sex + all_names$Pronoun + all_names$low_count, ylim=c(0,1), horizontal=TRUE)
+boxplot(all_names$logit_neg ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE)
+boxplot(all_names$logit_neg ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE)
+all_names<- read.csv("../../current_versions/nat_names_1993.csv", stringsAsFactors = FALSE) #
+neg<-all_names$Estimated.Inference.is.Negative#
+logit_neg <-log(neg/(1-neg))#
+all_names$logit_neg<-logit_neg#
+print(head(all_names))#
+all_names[all_names $Name=="Jordan", ]#
+#
+print(summary(all_names))#
+print(head(all_names))#
+#
+print(colnames(all_names))#
+par(las=1, mar=c(5,10,5,5))#
+boxplot(all_names$logit_neg ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE)
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE)
+all_counts<- csv.read("../given_names/givens_summed_all.csv")
+print(getwd())
+setwd("../../../link_freq/data_analysis")
+all_counts<- csv.read("../given_names/givens_summed_all.csv")
+all_counts<- read.csv("../given_names/givens_summed_all.csv")
+print(head(all_counts,300))
+print(head(all_counts,3000))
+all_names$low_count <- ifelse(all_names$Count<145, 1,0)
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun + all_names$low_count, ylim=c(0,1), horizontal=TRUE)
+print(summary(all_names))
+dim(all_names)
+plot(all_names$Count, all_names$logit_neg)
+plot(log(all_names$Count), all_names$logit_neg)
+out1<-smooth.spline(logit_neg~Count, data=all_names)
+out1<-smooth.spline(all_names$logit_neg~all_names$Count)
+points(out1$x, out1$y, type="l", col='red')
+out1<-smooth.spline(all_names$logit_neg~log(all_names$Count))
+points(out1$x, out1$y, type="l", col='red')
+all_names.f <-all_names[all_names$Assigned_Sex=="F"]
+all_names.f <-all_names[all_names$Assigned_Sex=="F", ]
+out.f<-smooth.spline(all_names.f $logit_neg~log(all_names.f$Count))
+points(out1$x, out.f$y, type="l", col='blue')
+points(out.f$x, out.f$y, type="l", col='blue')
+all_names.f.she <-all_names[all_names$Pronoun=="She", ]
+all_names.f.she <-all_names.f[all_names.f$Pronoun=="She", ]
+all_names.f.she <-all_names.f[all_names.f$Pronoun=="She", ]
+points(out.f.she$x, out.f.she$y, type="l", col='blue')
+out.f.she<-smooth.spline(all_names.f.she$logit_neg~log(all_names.f.she$Count))
+points(out.f.she$x, out.f.she$y, type="l", col='pink')
+all_names.m <-all_names[all_names$Assigned_Sex=="M", ]
+out.m<-smooth.spline(all_names.m $logit_neg~log(all_names.m$Count))
+all_names.m <-all_names[all_names$Assigned_Sex=="M", ]#
+out.m<-smooth.spline(all_names.m $logit_neg~log(all_names.m$Count))#
+points(out.m$x, out.m$y, type="l", col='purple')
+all_names.m.he <-all_names.m[all_names.m$Pronoun=="He", ]#
+out.m.he<-smooth.spline(all_names.m.he$logit_neg~log(all_names.m.he$Count))#
+points(out.f.she$x, out.f.she$y, type="l", col='green')
+plot(log(all_names$Count), all_names$logit_neg, xlim=c(6,7))
+out1<-smooth.spline(all_names$logit_neg~log(all_names$Count))#
+points(out1$x, out1$y, type="l", col='red')#
+all_names.f <-all_names[all_names$Assigned_Sex=="F", ]#
+out.f<-smooth.spline(all_names.f $logit_neg~log(all_names.f$Count))#
+points(out.f$x, out.f$y, type="l", col='blue')#
+#
+all_names.f.she <-all_names.f[all_names.f$Pronoun=="She", ]#
+out.f.she<-smooth.spline(all_names.f.she$logit_neg~log(all_names.f.she$Count))#
+points(out.f.she$x, out.f.she$y, type="l", col='pink')#
+#
+all_names.m <-all_names[all_names$Assigned_Sex=="M", ]#
+out.m<-smooth.spline(all_names.m $logit_neg~log(all_names.m$Count))#
+points(out.m$x, out.m$y, type="l", col='purple')#
+#
+all_names.m.he <-all_names.m[all_names.m$Pronoun=="He", ]#
+out.m.he<-smooth.spline(all_names.m.he$logit_neg~log(all_names.m.he$Count))#
+points(out.f.she$x, out.f.she$y, type="l", col='green')
+plot(log(all_names$Count), all_names$logit_neg) #, xlim=c(6,7))#
+out1<-smooth.spline(all_names$logit_neg~log(all_names$Count))#
+points(out1$x, out1$y, type="l", col='red')#
+all_names.f <-all_names[all_names$Assigned_Sex=="F", ]#
+out.f<-smooth.spline(all_names.f $logit_neg~log(all_names.f$Count))#
+points(out.f$x, out.f$y, type="l", col='blue')#
+#
+all_names.f.she <-all_names.f[all_names.f$Pronoun=="She", ]#
+out.f.she<-smooth.spline(all_names.f.she$logit_neg~log(all_names.f.she$Count))#
+points(out.f.she$x, out.f.she$y, type="l", col='pink')#
+#
+all_names.m <-all_names[all_names$Assigned_Sex=="M", ]#
+out.m<-smooth.spline(all_names.m $logit_neg~log(all_names.m$Count))#
+points(out.m$x, out.m$y, type="l", col='purple')#
+#
+all_names.m.he <-all_names.m[all_names.m$Pronoun=="He", ]#
+out.m.he<-smooth.spline(all_names.m.he$logit_neg~log(all_names.m.he$Count))#
+points(out.f.she$x, out.f.she$y, type="l", col='green')
+points(out.m.he$x, out.m.he$y, type="l", col='green')
+points(out.f.she$x, out.f.she$y, type="l", col='pink')
+points(out.m.he$x, out.m.he$y, type="l", col='green')
+print(head(all_counts,3000))
+print(all_counts[all_counts$Name=="Eddicius"])
+print(all_counts[all_counts$Name=="Eddicius"], )
+print(all_counts[all_counts$Name=="Eddicius", ])
+print(all_counts[all_counts$Name=="Skylar", ])
+print(all_counts[all_counts$Name=="Gafran", ])
+print(all_counts[all_counts$Name=="Xenomorph", ])
+print(getwd())
+setwd("../../../")
+print(getwd())
+setwd("../")
+print(getwd())
+setwd("/DS_Capstone")
+setwd("DS_Capstone")
+print(getwd())
+trade_data <-read.csv("insider_trade_deltas.csv")
+trade_data <-read.csv("insider_trade_deltas.csv")
+boxplot(trade_data$Delta_dir ~ trade_data$Transaction, ylim=c(0,1), horizontal=TRUE)
+delta_by_transaction_anova<-aov(trade_data$Delta_dir ~ trade_data$Transaction)
+summary(delta_by_transaction_anova)
+boxplot(trade_data$Transaction ~ trade_data$Delta_dir, ylim=c(0,1), horizontal=TRUE)
+boxplot(trade_data$Transaction ~ trade_data$Delta_dir, horizontal=TRUE)
+boxplot(trade_data$Transaction ~ trade_data$Delta_dir, horizontal=TRUE)
+boxplot(trade_data$Delta_dir ~ trade_data$Transaction, ylim=c(0,1), horizontal=TRUE)
+sales<- trade_data[trade_data$Transaction=="sale"]
+sales<- trade_data[trade_data$Transaction=="sale" , ]
+boxplot(sales$Delta_dir ~ sales$Transaction, ylim=c(0,1), horizontal=TRUE)
+boxplot(trade_data$Delta_dir ~ trade_data$Transaction, ylim=c(0,1), horizontal=TRUE)
