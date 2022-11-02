@@ -1,5 +1,5 @@
 # # from Desktop:/proj232/232_final_project/task2/pt4_qa
-from get_text_tweet import * # CREDIT TO : https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/main/Tweet-Lookup/get_tweets_with_bearer_token.py
+# from get_text_tweet import * # CREDIT TO : https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/main/Tweet-Lookup/get_tweets_with_bearer_token.py
 ## twitter API
 import sys
 import csv
@@ -13,8 +13,8 @@ import numpy as np
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import RobertaForQuestionAnswering, RobertaForMultipleChoice, RobertaForCausalLM
 from transformers import RobertaConfig
-import torch 
-import torch.utils
+import torch
+
 
 
 
