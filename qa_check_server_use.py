@@ -7,7 +7,7 @@ tokenizer = RobertaTokenizer.from_pretrained(
 model = RobertaForMultipleChoice.from_pretrained(
 "LIAMF-USP/aristo-roberta")
 dataset = datasets.load_dataset(
-    "arc",,
+    "arc",
     split=["train", "validation", "test"],
 )
 training_examples = dataset[0]
