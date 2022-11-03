@@ -26,20 +26,26 @@ def predict_and_record(input_data_df, counter):
         "answer_b":1
     }
 
-    q = input_data_df.iat[counter, 2]
+# pd df has the following cols:
+# ["tweet_text", "tweet_id",
+# 'retweets','favorites','date','adj','fav_to_follower_ratio',
+# 'retweet_to_follower_ratio','question','answer_a', 'answer_b',
+# 'Prediction_A', 'Prediction_B','Dif_Scores_A.B']
+
     context = input_data_df.iat[counter, 0]
-    adj = input_data_df.iat[counter, 1]
-    opt1 = input_data_df.iat[counter,3]
-    opt2 = input_data_df.iat[counter,4]
+    adj = input_data_df.iat[counter, 5]
+    q = input_data_df.iat[counter, 8]
+    opt1 = input_data_df.iat[counter,9]
+    opt2 = input_data_df.iat[counter,10]
     options = [opt1, opt2]
     predictions= get_multiple_choice_answers(context,q,options)
 
     #record prediction for qa in row of qa for version A input
-    input_data_df.iat[counter, 5] = predictions[0]#prediction for option a
-    input_data_df.iat[counter, 6] = predictions[1]#prediction for option b
+    input_data_df.iat[counter, 11] = predictions[0]#prediction for option a
+    input_data_df.iat[counter, 12] = predictions[1]#prediction for option b
 
     #record difference between prediction for A and B
-    input_data_df.iat[counter, 7] = predictions[0] - predictions[1]
+    input_data_df.iat[counter, 13] = predictions[0] - predictions[1]
 
 def get_multiple_choice_answers(context,question,options):
     tokenizer = AutoTokenizer.from_pretrained("LIAMF-USP/roberta-large-finetuned-race")
@@ -82,17 +88,18 @@ def export(output_name,dict_list):
 
 def main(): #python3 tweet_qa.py input_to_model.csv first_run_sentis.csv
     qa_file = open(sys.argv[1])
-    input_data_df = pd.read_csv(qa_file, names=["tweet_text", 'adj','question',
-    'answer_a', 'answer_b', 'Prediction_A', 'Prediction_B','Dif_Scores_A.B'])
+    input_data_df = pd.read_csv(qa_file, names=["tweet_text", "tweet_id",
+    'retweets','favorites','date','adj','fav_to_follower_ratio',
+    'retweet_to_follower_ratio','question','answer_a', 'answer_b',
+    'Prediction_A', 'Prediction_B','Dif_Scores_A.B'])
     num_rows=len(input_data_df)
     # adjectives_list contains 20 positive adjectives and 20 negative adjectives for describing a person
     counter = 0
     num_rows=len(input_data_df)
 
     #testing
-    while counter<182:
-        if counter>=176:
-    # while counter< num_rows:
+    # while counter<182:
+    while counter< num_rows:
             print("p&r again")
             predict_and_record(input_data_df, counter)
         counter+=1
@@ -100,6 +107,8 @@ def main(): #python3 tweet_qa.py input_to_model.csv first_run_sentis.csv
     input_data_df.to_csv(sys.argv[2])
 
 main()
+
+# run for
 
 #
 #

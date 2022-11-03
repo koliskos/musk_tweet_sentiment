@@ -1,5 +1,6 @@
 import sys
 import csv
+import math
 
 # makes the dicts that will be passed into the qa model
 def make_input_to_model(preprocessed_tweet_dicts,adjs_list):
@@ -14,6 +15,8 @@ def make_input_to_model(preprocessed_tweet_dicts,adjs_list):
             new_dict["favorites"] = tweet_dict["favorites"]
             new_dict["date"] = tweet_dict["date"]
             new_dict["adj"] = adj
+            new_dict["fav_to_follower_ratio"] = math.log(int(tweet_dict["favorites"])/int(tweet_dict["user_followers"]))
+            new_dict["retweet_to_follower_ratio"] = math.log(int(tweet_dict["retweets"])/int(tweet_dict["user_followers"]))
             new_dict["question"] = "How can this statement be described?"
             new_dict["answer_a"] = "{}".format(adj)
             new_dict["answer_b"] = "not {}".format(adj)
