@@ -100,13 +100,13 @@ def main(): #python3 tweet_qa.py input_to_model.csv first_run_sentis.csv
     #testing
     # while counter<182:
     while counter< num_rows:
-            print("p&r again")
-            predict_and_record(input_data_df, counter)
+        print("p&r again")
+        predict_and_record(input_data_df, counter)
         counter+=1
     # export
     input_data_df.to_csv(sys.argv[2])
-# tmux session is musk
-main()
+# tmux session is musk. output to full_run_sentis.csv 
+main() # python3 tweet_qa.py UPDATED_input_to_qa_model.csv full_run_sentis.csv
 
 # run for
 
