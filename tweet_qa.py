@@ -96,16 +96,36 @@ def main(): #python3 tweet_qa.py input_to_model.csv first_run_sentis.csv
     # adjectives_list contains 20 positive adjectives and 20 negative adjectives for describing a person
     counter = 0
     num_rows=len(input_data_df)
-
+    portion_to_run = sys.argv[2] # 1, 2, 3, 4 to run 1/4 of the data at a time
     #testing
     # while counter<182:
-    while counter< num_rows:
-        print("p&r again")
-        predict_and_record(input_data_df, counter)
-        counter+=1
+    if portion_to_run == "first": # tmux: musk1 , call: python3 tweet_qa.py UPDATED_input_to_qa_model.csv first first_sentis.csv
+        while counter< num_rows/4:
+            print("p&r again")
+            predict_and_record(input_data_df, counter)
+            counter+=1
+    if portion_to_run == "second": # tmux: musk2 , call: python3 tweet_qa.py UPDATED_input_to_qa_model.csv second second_sentis.csv
+        while counter< num_rows/2:
+            if counter>= num_rows/4:
+                print("p&r again")
+                predict_and_record(input_data_df, counter)
+                counter+=1
+    if portion_to_run == "third": # tmux: musk3 , call: python3 tweet_qa.py UPDATED_input_to_qa_model.csv third third_sentis.csv
+        while counter< 3*num_rows/4:
+            if counter>= num_rows/2:
+                print("p&r again")
+                predict_and_record(input_data_df, counter)
+                counter+=1
+    if portion_to_run == "fourth": # tmux: musk4 , call: python3 tweet_qa.py UPDATED_input_to_qa_model.csv fourth fourth_sentis.csv
+        while counter< num_rows:
+            if counter>= 3*num_rows/4:
+                print("p&r again")
+                predict_and_record(input_data_df, counter)
+                counter+=1
     # export
-    input_data_df.to_csv(sys.argv[2])
-# tmux session is musk. output to full_run_sentis.csv 
+    input_data_df.to_csv(sys.argv[3])
+
+# tmux session is musk. output to full_run_sentis.csv
 main() # python3 tweet_qa.py UPDATED_input_to_qa_model.csv full_run_sentis.csv
 
 # run for
