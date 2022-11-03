@@ -105,7 +105,7 @@ def main(): #python3 tweet_qa.py input_to_model.csv first_run_sentis.csv
         counter+=1
     # export
     input_data_df.to_csv(sys.argv[2])
-
+# tmux session is musk
 main()
 
 # run for
