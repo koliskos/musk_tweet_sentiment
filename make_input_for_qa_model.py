@@ -9,6 +9,10 @@ def make_input_to_model(preprocessed_tweet_dicts,adjs_list):
         for adj in adjs_list:
             new_dict = {}
             new_dict["tweet_text"] = tweet_dict['text']
+            new_dict["tweet_id"] = tweet_dict['id']
+            new_dict["retweets"] = tweet_dict["retweets"]
+            new_dict["favorites"] = tweet_dict["favorites"]
+            new_dict["date"] = tweet_dict["date"]
             new_dict["adj"] = adj
             new_dict["question"] = "How can this statement be described?"
             new_dict["answer_a"] = "{}".format(adj)
