@@ -109,19 +109,19 @@ def main(): #python3 tweet_qa.py input_to_model.csv first_run_sentis.csv
             if counter>= num_rows/4:
                 print("p&r again")
                 predict_and_record(input_data_df, counter)
-                counter+=1
+            counter+=1
     if portion_to_run == "third": # tmux: musk3 , call: python3 tweet_qa.py UPDATED_input_to_qa_model.csv third third_sentis.csv
         while counter< 3*num_rows/4:
             if counter>= num_rows/2:
                 print("p&r again")
                 predict_and_record(input_data_df, counter)
-                counter+=1
+            counter+=1
     if portion_to_run == "fourth": # tmux: musk4 , call: python3 tweet_qa.py UPDATED_input_to_qa_model.csv fourth fourth_sentis.csv
         while counter< num_rows:
             if counter>= 3*num_rows/4:
                 print("p&r again")
                 predict_and_record(input_data_df, counter)
-                counter+=1
+            counter+=1
     # export
     input_data_df.to_csv(sys.argv[3])
 
