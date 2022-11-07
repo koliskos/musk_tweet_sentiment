@@ -39,7 +39,7 @@ def export(output_name,dict_list):
         writer.writerows(dict_list)
 
 def main():
-    preprocessed_tweet_dicts = open_f(sys.argv[1]) #preprocessed_tweets.csv
+    preprocessed_tweet_dicts = open_f(sys.argv[1]) #preprocessed_tweets.csv # or for the last 500, use: past500_nontruncated.csv
     # adjectives_list contains 20 positive adjectives and 20 negative adjectives for describing a person
     adjs_list = ["creative","adventurous","generous","decisive","diplomatic", 'affectionate','hardworking','observant','helpful','optimistic','honest','funny','amusing','calm','polite','charismatic', 'romantic','friendly','clever','compassionate',"aggressive",'cynical','grumpy','nervous','defensive','arrogant','impulsive','patronizing','pessimistic','sullen','stubborn','egotistical','rude','mean','secretive','bossy','sarcastic','irresponsible','lazy','selfish']
     input_to_model = make_input_to_model(preprocessed_tweet_dicts,adjs_list)
