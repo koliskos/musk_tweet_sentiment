@@ -56,6 +56,8 @@ def get_multiple_choice_answers(context,question,options):
             # fill-in-the-blank questions
             question_option = question.replace("_", ending)
         else:
+            print(question)
+            print(ending)
             question_option = question + " " + ending
         inputs = tokenizer(context,question_option,add_special_tokens=True,padding="max_length",truncation=True,return_overflowing_tokens=False, return_tensors="pt")
         questions.append(question_option)
