@@ -1,7 +1,7 @@
 
 print(getwd()) 
 
-setwd("DS_Capstone")
+setwd("insider_trades")
 print(getwd()) 
 trade_data <-read.csv("insider_trade_deltas.csv")
 

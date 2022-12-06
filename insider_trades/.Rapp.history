@@ -1,0 +1,444 @@
+plot(lm_model$fitted.values, lm_model$resid)#
+set.seed(44)#
+fit.jit<-lm_model $fitted.values + rnorm(nrow(sentis), 0, 1)#
+res.jit<-lm_model $residuals + rnorm(nrow(sentis), 0, 1)#
+plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(lm_model $residuals~ lm_model $fitted.values)#
+points(spout$x, spout$y, col="red",type="l")
+trimmed_lm_model <-lm(fav_to_follower_ratio~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_arrogant+prediction_egotistical+prediction_rude, data = train)
+summary(trimmed_lm_model)
+mean(summary(trimmed_lm_model)$residuals^2) # 1.668992
+mean(summary(lm_model)$residuals^2) # equals 1.49782. This means our model tends to be biased towards over estimating the like value.
+summary(lm_model)
+summary(trimmed_lm_model)
+mean(summary(lm_model)$residuals^2) # equals 1.549231. This means our model tends to be biased towards over estimating the like value.
+mean(summary(trimmed_lm_model)$residuals^2) # 1.718709
+plot(trimmed_lm_model $fitted.values, trimmed_lm_model $resid)#
+set.seed(44)#
+fit.jit<-trimmed_lm_model$fitted.values + rnorm(nrow(sentis), 0, 1)#
+res.jit<-trimmed_lm_model$residuals + rnorm(nrow(sentis), 0, 1)#
+plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(trimmed_lm_model$residuals~ trimmed_lm_model$fitted.values)#
+points(spout$x, spout$y, col="red",type="l")
+test_predictions<- predict(trimmed_lm_model,  new=test)#
+print(test_predictions)#
+rmse_test <- sqrt(sum((test$fav_to_follower_ratio - test_predictions)^2)/nrow(test))#
+rmse_test
+plot(lm_model$fitted.values, lm_model$resid, main="All Features Residuals vs Fitted Values", xlab="Residuals", ylab="Fitted Values")
+plot(lm_model$fitted.values, lm_model$resid, main="All Features Residuals vs Fitted Values", xlab="Residuals", ylab="Fitted Values")#
+set.seed(44)#
+fit.jit<-lm_model $fitted.values + rnorm(nrow(sentis), 0, 1)#
+res.jit<-lm_model $residuals + rnorm(nrow(sentis), 0, 1)#
+plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(lm_model $residuals~ lm_model $fitted.values)#
+points(spout$x, spout$y, col="red",type="l")
+plot(lm_model$fitted.values, lm_model$resid, main="All Features Residuals vs Fitted Values", xlab="Residuals", ylab="Fitted Values")#
+set.seed(44)#
+fit.jit<-lm_model $fitted.values + rnorm(nrow(sentis), 0, 1)#
+res.jit<-lm_model $residuals + rnorm(nrow(sentis), 0, 1)#
+plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(lm_model $residuals~ lm_model $fitted.values)#
+points(spout$x, spout$y, col="red",type="l")
+plot(lm_model$fitted.values, lm_model$resid)#
+title(main="All Features Residuals vs Fitted Values", xlab="Residuals", ylab="Fitted Values")#
+set.seed(44)#
+fit.jit<-lm_model $fitted.values + rnorm(nrow(sentis), 0, 1)#
+res.jit<-lm_model $residuals + rnorm(nrow(sentis), 0, 1)#
+plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(lm_model $residuals~ lm_model $fitted.values)#
+points(spout$x, spout$y, col="red",type="l")
+plot(lm_model$fitted.values, lm_model$resid)#
+title(main="All Features Residuals vs Fitted Values", xlab="Residuals", ylab="Fitted Values")#
+set.seed(44)#
+fit.jit<-lm_model $fitted.values + rnorm(nrow(sentis), 0, 1)#
+res.jit<-lm_model $residuals + rnorm(nrow(sentis), 0, 1)#
+plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(lm_model $residuals~ lm_model $fitted.values)#
+points(spout$x, spout$y, col="red",type="l")
+# Plot the residuals vs fitted vals to check that there is no heteroscedasticity.#
+# The residuals vs fitted vals plot seems to show mostly homoscedasticity.#
+plot(lm_model$fitted.values, lm_model$resid)#
+set.seed(44)#
+fit.jit<-lm_model $fitted.values + rnorm(nrow(sentis), 0, 1)#
+res.jit<-lm_model $residuals + rnorm(nrow(sentis), 0, 1)#
+plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(lm_model $residuals~ lm_model $fitted.values)#
+points(spout$x, spout$y, col="red",type="l")#
+title(main="All Features Residuals vs Fitted Values", xlab="Residuals", ylab="Fitted Values")
+plot(lm_model$fitted.values, lm_model$resid)#
+set.seed(44)#
+fit.jit<-lm_model $fitted.values + rnorm(nrow(sentis), 0, 1)#
+res.jit<-lm_model $residuals + rnorm(nrow(sentis), 0, 1)#
+plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(lm_model $residuals~ lm_model $fitted.values)#
+points(spout$x, spout$y, col="red",type="l")#
+title(main="All Features Residuals vs Fitted Values")
+plot(trimmed_lm_model $fitted.values, trimmed_lm_model $resid)#
+set.seed(44)#
+fit.jit<-trimmed_lm_model$fitted.values + rnorm(nrow(sentis), 0, 1)#
+res.jit<-trimmed_lm_model$residuals + rnorm(nrow(sentis), 0, 1)#
+plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(trimmed_lm_model$residuals~ trimmed_lm_model$fitted.values)#
+points(spout$x, spout$y, col="red",type="l")#
+title(main="Model Residuals vs Fitted Values")
+plot(trimmed_lm_model $fitted.values, trimmed_lm_model $resid)
+plot(fit.jit, res.jit)
+plot(trimmed_lm_model $fitted.values, trimmed_lm_model $resid)
+plot(fit.jit, res.jit)
+plot(trimmed_lm_model $fitted.values, trimmed_lm_model $resid)#
+set.seed(44)#
+# fit.jit<-trimmed_lm_model$fitted.values + rnorm(nrow(sentis), 0, 1)#
+# res.jit<-trimmed_lm_model$residuals + rnorm(nrow(sentis), 0, 1)#
+# plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(trimmed_lm_model$residuals~ trimmed_lm_model$fitted.values)#
+points(spout$x, spout$y, col="red",type="l")#
+title(main="Model Residuals vs Fitted Values")
+summary(lm_model)
+trimmed_lm_model <-lm(fav_to_follower_ratio~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_generous+prediction_polite+prediction_egotistical+prediction_rude, data = train)
+summary(trimmed_lm_model)
+mean(summary(trimmed_lm_model)$residuals^2) # 1.718709
+plot(trimmed_lm_model $fitted.values, trimmed_lm_model $resid)
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(trimmed_lm_model$residuals~ trimmed_lm_model$fitted.values)#
+points(spout$x, spout$y, col="red",type="l")#
+title(main="Model Residuals vs Fitted Values")
+plot(trimmed_lm_model $fitted.values, trimmed_lm_model $resid)#
+set.seed(44)#
+# fit.jit<-trimmed_lm_model$fitted.values + rnorm(nrow(sentis), 0, 1)#
+# res.jit<-trimmed_lm_model$residuals + rnorm(nrow(sentis), 0, 1)#
+# plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(trimmed_lm_model$residuals~ trimmed_lm_model$fitted.values)#
+points(spout$x, spout$y, col="red",type="l")#
+title(main="Model Residuals vs Fitted Values")
+trimmed_lm_model <-lm(fav_to_follower_ratio~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_arrogant+prediction_egotistical+prediction_rude, data = train)
+trimmed_lm_model <-lm(fav_to_follower_ratio~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_arrogant+prediction_egotistical+prediction_rude, data = train)
+plot(trimmed_lm_model $fitted.values, trimmed_lm_model $resid)#
+set.seed(44)#
+# fit.jit<-trimmed_lm_model$fitted.values + rnorm(nrow(sentis), 0, 1)#
+# res.jit<-trimmed_lm_model$residuals + rnorm(nrow(sentis), 0, 1)#
+# plot(fit.jit, res.jit)#
+abline(h=0)#
+# add spline#
+spout<-smooth.spline(trimmed_lm_model$residuals~ trimmed_lm_model$fitted.values)#
+points(spout$x, spout$y, col="red",type="l")#
+title(main="Model Residuals vs Fitted Values")
+test_predictions<- predict(trimmed_lm_model,  new=test)#
+print(test_predictions)#
+rmse_test <- sqrt(sum((test$fav_to_follower_ratio - test_predictions)^2)/nrow(test))#
+rmse_test
+trimmed_lm_model <-lm(fav_to_follower_ratio~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_generous+prediction_polite+prediction_egotistical+prediction_rude, data = train)
+summary(trimmed_lm_model)
+lm_model <-lm(fav_to_follower_ratio~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_helpful+prediction_optimistic+prediction_honest+prediction_funny+prediction_amusing+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_aggressive+prediction_cynical+prediction_grumpy+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_bossy+prediction_sarcastic+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)#
+summary(lm_model)
+colnames(sentis)
+lm_model <-lm(favorites~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_helpful+prediction_optimistic+prediction_honest+prediction_funny+prediction_amusing+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_aggressive+prediction_cynical+prediction_grumpy+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_bossy+prediction_sarcastic+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)
+summary(lm_model)
+colnames(sentis)
+lm_model <-lm(retweets ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_helpful+prediction_optimistic+prediction_honest+prediction_funny+prediction_amusing+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_aggressive+prediction_cynical+prediction_grumpy+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_bossy+prediction_sarcastic+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)
+summary(lm_model)
+tree_model<-ctree(fav_to_follower_ratio~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_arrogant+prediction_egotistical+prediction_rude, data = train)#
+plot(tree_model)
+tree_model<-ctree(fav_to_follower_ratio~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_arrogant+prediction_egotistical+prediction_rude, data = train)
+library(partykit)
+tree_model<-ctree(fav_to_follower_ratio~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_arrogant+prediction_egotistical+prediction_rude, data = train)#
+plot(tree_model)
+tree_model<-ctree(retweets~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_arrogant+prediction_egotistical+prediction_rude, data = train)#
+plot(tree_model)
+tree_model<-ctree(retweetto_follower_ratio~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_arrogant+prediction_egotistical+prediction_rude, data = train)#
+plot(tree_model)
+tree_model<-ctree(retweet_to_follower_ratio~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_arrogant+prediction_egotistical+prediction_rude, data = train)#
+plot(tree_model)
+trimmed_lm_model <-lm(retweet_to_follower_ratio ~prediction_diplomatic+prediction_observant+prediction_compassionate+prediction_generous+prediction_polite+prediction_egotistical+prediction_rude, data = train)
+summary(trimmed_lm_model)
+lm_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_helpful+prediction_optimistic+prediction_honest+prediction_funny+prediction_amusing+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_aggressive+prediction_cynical+prediction_grumpy+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_bossy+prediction_sarcastic+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)
+summary(lm_model)
+lm_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_helpful+prediction_optimistic+prediction_honest+prediction_funny+prediction_amusing+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_cynical+prediction_grumpy+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_bossy+prediction_sarcastic+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)
+summary(lm_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_helpful+prediction_optimistic+prediction_funny+prediction_amusing+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_cynical+prediction_grumpy+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_bossy+prediction_sarcastic+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)
+summary(lm_model)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_helpful+prediction_optimistic+prediction_funny+prediction_amusing+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_cynical+prediction_grumpy+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_sarcastic+prediction_irresponsible+prediction_selfish, data = train)
+summary(lm__highr2_model)
+summary(lm_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_cynical+prediction_grumpy+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_sarcastic+prediction_irresponsible+prediction_selfish, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_sarcastic+prediction_irresponsible+prediction_selfish, data = train)
+summary(lm__highr2_model)
+summary(lm_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_sarcastic+prediction_irresponsible+prediction_selfish, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_sarcastic+prediction_irresponsible+prediction_selfish, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_sarcastic+prediction_irresponsible+prediction_selfish, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_sarcastic+prediction_irresponsible+prediction_selfish, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_sarcastic+prediction_irresponsible+prediction_selfish, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_sarcastic+prediction_irresponsible, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+summary(lm__highr2_model)
+tree_model<-ctree(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)#
+plot(tree_model)
+trimmed_lm_model <-lm(retweet_to_follower_ratio ~prediction_decisive+prediction_compassionate+prediction_mean+prediction_egotistical+prediction_rude, data = train)#
+summary(trimmed_lm_model)
+summary(lm__highr2_model)
+mean(summary(lm__highr2_model)$residuals^2) # equals 1.549231. This means our model tends to be biased towards over estimating the like value.
+rmse.lm__highr2_model <-sqrt(sum((train$retweet_to_follower_ratio-predict(lm_highr2_model))^2)/nrow(train))
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+rmse.lm__highr2_model <-sqrt(sum((train$retweet_to_follower_ratio-predict(lm__highr2_model))^2)/nrow(train))
+rmse.tree_model<-sqrt(sum((train$retweet_to_follower_ratio-predict(tree_model))^2)/nrow(train))
+rmse.lm__highr2_model
+rmse.tree_model
+rmse.lm__highr2_model <-sqrt(sum((train$fav_to_follower_ratio-predict(lm__highr2_model))^2)/nrow(train))
+rmse.lm__highr2_model
+rmse.tree_model<-sqrt(sum((train$retweet_to_follower_ratio-predict(tree_model))^2)/nrow(train))
+rmse.tree_model<-sqrt(sum((train$fav_to_follower_ratio-predict(tree_model))^2)/nrow(train))
+rmse.tree_model
+lm__highr2_model <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+summary(lm__highr2_model)
+lm__highr2_model <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+summary(lm__highr2_model)
+summary(lm_retweet)
+lm_retweet <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+summary(lm_retweet)
+retweet_tree_model<-ctree(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)#
+plot(tree_model)
+rmse.retweet_lm_model <-sqrt(sum((train$fav_to_follower_ratio-predict(lm_retweet))^2)/nrow(train))#
+rmse.lm_retweet#
+rmse.retweet_tree_model <-sqrt(sum((train$fav_to_follower_ratio-predict(retweet_tree_model))^2)/nrow(train))#
+rmse.retweet_tree_model
+mean(summary(lm_retweet)$residuals^2) # equals 1.736. This means our model tends to be biased towards over estimating the like value.
+rmse.retweet_lm_model <-sqrt(sum((train$fav_to_follower_ratio-predict(lm_retweet))^2)/nrow(train))#
+rmse.lm_retweet#
+rmse.retweet_tree_model <-sqrt(sum((train$fav_to_follower_ratio-predict(retweet_tree_model))^2)/nrow(train))#
+rmse.retweet_tree_model
+rmse.lm_retweet <-sqrt(sum((train$fav_to_follower_ratio-predict(lm_retweet))^2)/nrow(train))#
+rmse.lm_retweet
+lm_model <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_helpful+prediction_optimistic+prediction_honest+prediction_funny+prediction_amusing+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_aggressive+prediction_cynical+prediction_grumpy+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_bossy+prediction_sarcastic+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)#
+summary(lm_model)
+lm_fav <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_helpful+prediction_optimistic+prediction_honest+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_aggressive+prediction_cynical+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_bossy+prediction_sarcastic+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)#
+summary(lm_fav)
+summary(lm_model)
+lm_fav <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_aggressive+prediction_cynical+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_bossy+prediction_sarcastic+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)#
+summary(lm_fav)
+summary(lm_model)
+lm_fav <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_aggressive+prediction_cynical+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)#
+summary(lm_fav)
+summary(lm_model)
+lm_fav <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_aggressive+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)#
+summary(lm_fav)
+summary(lm_model)
+lm_fav <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)#
+summary(lm_fav)
+summary(lm_model)
+lm_fav <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_compassionate+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)#
+summary(lm_fav)
+summary(lm_model)
+lm_fav <-lm(fav_to_follower_ratio ~prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)#
+summary(lm_fav)
+lm_fav <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)#
+summary(lm_fav)
+setwd("~")
+setwd("Desktop:/CALabS22/nameBias/sentiment_exp/analysis/ssn_1993_sentiment")
+library(dplyr)#
+library(tidyverse)    #
+all_names<- read.csv("../../current_versions/nat_names_1993.csv", stringsAsFactors = FALSE) #
+neg<-all_names$Estimated.Inference.is.Negative#
+logit_neg <-log(neg/(1-neg))#
+all_names$logit_neg<-logit_neg#
+print(head(all_names))#
+all_names[all_names $Name=="Jordan", ]#
+#
+print(summary(all_names))#
+print(head(all_names))#
+#
+print(colnames(all_names))#
+par(las=1, mar=c(5,10,5,5))#
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE)
+?par
+title(ylab="Assigned Sex and Pronoun")
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, xlab="",ylab='')
+title(ylab="Assigned Sex and Pronoun")
+title(ylab="Assigned Sex and Pronoun", mgp[1]=4.5)
+title(ylab="Assigned Sex and Pronoun", mgp[1]=6.5)
+title(ylab="Assigned Sex Pronoun", mgp[1]=6.5)
+print(colnames(all_names))#
+par(las=1, mar=c(5,10,5,5))#
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, xlab="",ylab='')#
+#
+title(ylab="Assigned Sex and Pronoun", mgp[1]=5.5)
+title(ylab="Assigned Sex and Pronoun", mgp[1]=5.5)
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, xlab="",ylab='Assigned Sex and Pronoun', mgp[1]=5.5)
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, xlab="",ylab='Assigned Sex and Pronoun', mgp=c(5.5,1,0))
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, xlab="Negativity Score",ylab='Assigned Sex and Pronoun', mgp=c(5.5,1,0))
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(5.5,1,0))
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(7.5,1,0))
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(9,1,0))
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(11.5,1,0))
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(13,1,0))
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(17,1,0))
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(17,1,0))
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(17,1,0), cex.lab = 0.7)
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(17,1,0), cex.axis = 0.7)
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(17,1,0), cex.axis = 0.75)
+all_points_scatter <- scatter(all_names$Count , all_names$Estimated.Inference.is.Negative)
+all_points_scatter <- plot(all_names$Count , all_names$Estimated.Inference.is.Negative)
+all_points_scatter <- plot(all_names$Count, all_names$Estimated.Inference.is.Negative, main="Negativity Score by Count for 1993 S.S. Names", ylab="Negativity Score",xlab='Occurences of Name in 1993')
+all_points_scatter <- plot(all_names$Count, all_names$Estimated.Inference.is.Negative, main="Negativity Score by Count for 1993 S.S. Names", ylab="Negativity Score",xlab='Occurences of Name in 1993', las=1)
+summary(lm_fav)
+lm_fav <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)#
+summary(lm_fav)
+# Calculate MSE (mean squared error)#
+mean(summary(lm_fav)$residuals^2)
+lm_retweet <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)#
+#
+summary(lm_retweet)
+# make popularity (ie count) vs estimated inference is neg #
+pop_neg <- plot(all_names$Count, all_names$Estimated.Inference.is.Negative, main="Negativity Score by Count for 1993 S.S. Names", ylab="Negativity Score",xlab='Occurences of Name in 1993', las=1)
+all_points_scatter <- plot(all_names$Count, all_names$Pronoun+all_names$Assigned_Sex, main="Negativity Score by Count for 1993 S.S. Names", ylab="Negativity Score",xlab='Occurences of Name in 1993', las=1)
+boxplot(all_names$Estimated.Inference.is.Negative ~ all_names$Assigned_Sex + all_names$Pronoun, ylim=c(0,1), horizontal=TRUE, main="Negativity Score by Sex & Pronoun",xlab="Negativity Score",ylab='Assigned Sex and Pronoun', las = 1, mgp=c(17,1,0), cex.axis = 0.75)
+all_points_scatter <- plot(all_names$Count~ all_names$Assigned_Sex + all_names$Pronoun, main="Negativity Score by Count for 1993 S.S. Names", ylab="Negativity Score",xlab='Occurences of Name in 1993', las=1)
+setwd("~")
+setwd("/Users/skylarkolisko/Desktop:/CALabS22/nameBias/exp4")
+name_counts<- read.csv("name_count_by_cat.csv", stringsAsFactors = FALSE)
+colnames(name_counts)
+nationality_counts<- read.csv("nationality_count_by_cat.csv", stringsAsFactors = FALSE)
+colnames(nationality_counts)
+cat_counts<- read.csv("cat_counts.csv", stringsAsFactors = FALSE) #
+colnames(cat_counts)
+quantile(name_counts)
+quantile(name_counts$count)
+quantile(nationality_counts$count)
+quantile(nationality_counts$count)
+hist(cat_counts)
+plot(cat_counts$count)
+hist(cat_counts$count)
+hist(cat_counts$nationality)
+library(ggplot)
+library(ggplot2)
+fencer_nationalities<- cat_counts[cat_counts$category == "fencer"]
+fencer_nationalities<- cat_counts[cat_counts$category == "fencer" ,]
+ggplot(fencer_nationalities) + geom_bar(fill='green') + labs(x="Country", y="Count")
+colnames(cat_counts)
+fencer_nationalities<- nationality_counts[nationality_counts $category == "fencer" ,]
+colnames(nationality_counts)
+ggplot(data=fencer_nationalities, aes(x=nationality)) + geom_bar(fill='green') + labs(x="Country", y="Count")
+aggregated_fencer_order <- mutate(fencer_nationalities, nationality = reorder(nationality, -n, sum))
+aggregated_fencer_order <- mutate(fencer_nationalities, nationality = reorder(nationality, -count, sum))
+ggplot(aggregated_fencer_order)+geom_col(aes(x=nationality, y=count))
+quantile(nationality_counts$count)
+fencer_nationalities<- subset(nationality_counts, category == "fencer" && count>7)
+fencer_nationalities<- nationality_counts[(nationality_counts $category == "fencer") &&(nationality_counts $count>7) ,]
+colnames(nationality_counts)
+fencer_nationalities_g_7<- fencer_nationalities[fencer_nationalities$count>7, ]
+aggregated_fencer_order <- mutate(fencer_nationalities_g_7, nationality = reorder(nationality, -count, sum))
+ggplot(aggregated_fencer_order)+geom_col(aes(x=nationality, y=count))
+aggregated_fencer_order <- mutate(fencer_nationalities_g_7, nationality = reorder(nationality, -count, sum))
+ggplot(aggregated_fencer_order)+geom_col(aes(x=nationality, y=count))
+fencer_nationalities_g_7<- fencer_nationalities[fencer_nationalities$count>7, ]
+print(fencer_nationalities_g_7)
+print(fencer_nationalities)
+fencer_nationalities<- nationality_counts[nationality_counts $category == "fencer" ,]
+print(fencer_nationalities)
+fencer_nationalities_g_7<- fencer_nationalities[fencer_nationalities$count>7, ]
+print(fencer_nationalities_g_7)
+fencer_nationalities_g_7<- fencer_nationalities[fencer_nationalities$count>=7, ]
+print(fencer_nationalities_g_7)
+aggregated_fencer_order <- mutate(fencer_nationalities_g_7, nationality = reorder(nationality, -count, sum))
+ggplot(aggregated_fencer_order)+geom_col(aes(x=nationality, y=count))
+bp_counts<- read.csv("birth_place_count_by_cat.csv", stringsAsFactors = FALSE) #
+colnames(bp_counts)
+setwd("~")
+setwd("/Users/skylarkolisko/Desktop:/DS_Capstone/musk_tweet_sentiment")
+sentis<- read.csv("FINAL_data_used/ALL_COMBINED_FINAL.csv", stringsAsFactors = FALSE) #
+colnames(sentis)#
+#
+# Make training set and testing set#
+set.seed(12) #
+nrow(sentis)#
+indicesTrainingSet<-sample(1:nrow(sentis), 530, replace=FALSE)#
+train<-sentis[indicesTrainingSet,]#
+test<-sentis[-indicesTrainingSet,]#
+nrow(train) #
+nrow(test) #
+# all vars un trimmed model in predicting fave score #
+lm_model <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_helpful+prediction_optimistic+prediction_honest+prediction_funny+prediction_amusing+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_aggressive+prediction_cynical+prediction_grumpy+prediction_nervous+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_patronizing+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_secretive+prediction_bossy+prediction_sarcastic+prediction_irresponsible+prediction_lazy+prediction_selfish, data = train)#
+summary(lm_model)
+lm_fav <-lm(fav_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_defensive+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)#
+summary(lm_fav)
+# model trimmed to predict retweet value#
+lm_retweet <-lm(retweet_to_follower_ratio ~prediction_creative+prediction_adventurous+prediction_generous+prediction_decisive+prediction_diplomatic+prediction_affectionate+prediction_hardworking+prediction_observant+prediction_optimistic+prediction_funny+prediction_calm+prediction_polite+prediction_charismatic+prediction_romantic+prediction_friendly+prediction_clever+prediction_compassionate+prediction_grumpy+prediction_arrogant+prediction_impulsive+prediction_pessimistic+prediction_sullen+prediction_stubborn+prediction_egotistical+prediction_rude+prediction_mean+prediction_irresponsible, data = train)
+summary(lm_retweet)
+summary(lm_fav)
+fencer_names<- name_counts[name_counts$category == "fencer" ,]
+quantile(name_counts$count)
+fencer_names_g_20<- fencer_names[fencer_names$count>=20, ]
+print(fencer_names_g_20)
+fencer_names<- name_counts[name_counts$category == "medical person" ,]
+medperson_names_g_20<- medperson_names[medperson_names$count>=20, ]
+medperson_names<- name_counts[name_counts$category == "medical person" ,]
+medperson_names_g_20<- medperson_names[medperson_names$count>=20, ]
+medperson_names<- name_counts[name_counts$category == "medical person" ,]#
+#
+medperson_names_g_20<- medperson_names[medperson_names$count>=20, ]#
+#
+aggregated_medperson_order <- mutate(medperson_names_g_20, name = reorder(name, -count, sum))#
+ggplot(aggregated_medperson_order)+geom_col(aes(x=name, y=count))+ labs(title="Medical Person Counts by Name")
+militaryperson_names<- name_counts[name_counts$category == "military person" ,]#
+militaryperson_names_g_20<- militaryperson_names[militaryperson_names$count>=20, ]#
+aggregated_militaryperson_order <- mutate(militaryperson_names_g_20, name = reorder(name, -count, sum))#
+ggplot(aggregated_militaryperson_order)+geom_col(aes(x=name, y=count))+ labs(title="Military Person Counts by Name")
+quantile(militaryperson_names$count)
+militaryperson_names_g_20<- militaryperson_names[militaryperson_names$count>=200, ]
+aggregated_militaryperson_order <- mutate(militaryperson_names_g_20, name = reorder(name, -count, sum))
+ggplot(aggregated_militaryperson_order)+geom_col(aes(x=name, y=count))+ labs(title="Military Person Counts by Name")
+militaryperson_names_g_500<- militaryperson_names[militaryperson_names$count>=500, ]#
+aggregated_militaryperson_order <- mutate(militaryperson_names_g_500, name = reorder(name, -count, sum))#
+ggplot(aggregated_militaryperson_order)+geom_col(aes(x=name, y=count))+ labs(title="Military Person Counts by Name")
+ggplot(aggregated_militaryperson_order)+geom_col(aes(x=name, y=count))+ labs(title="Military Person Counts by Name") + theme(axis.text.x = element(text(angle=90)))
+ggplot(aggregated_militaryperson_order)+geom_col(aes(x=name, y=count))+ labs(title="Military Person Counts by Name") + theme(axis.text.x = element_text(angle=90))
+militaryperson_names_g_500_not_words<- militaryperson_names[militaryperson_names$name != "officer" & militaryperson_names$name != "Army", ]
+militaryperson_names_g_500_not_words<-militaryperson_names_g_500_not_words[militaryperson_names_g_500_not_words$name != "of" & militaryperson_names$name != "Von", ]
+militaryperson_names_g_500_not_words<-militaryperson_names_g_500_not_words[militaryperson_names_g_500_not_words$name != "of" , ]
+print(getwd())
+setwd("insider_trades")
+trade_data <-read.csv("insider_trade_deltas.csv")#
+boxplot(trade_data$Delta_dir ~ trade_data$Transaction, ylim=c(0,1), horizontal=TRUE)#
+delta_by_transaction_anova<-aov(trade_data$Delta_dir ~ trade_data$Transaction)#
+summary(delta_by_transaction_anova)
+print(head(all_names))
